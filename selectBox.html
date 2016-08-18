@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <select ng-model="secim" ng-options="x for x in names">
+    </select>
+
+    <br>
+
+    <select>
+
+        <option ng-repeat="x in names">{{x}}</option>
+
+
+    </select>
+
+
+</div>
+
+
+
+
+
+<script>
+
+    var app=angular.module('myApp' , []);
+    app.controller('myCtrl' ,function ($scope) {
+        $scope.names=["ali" , "ahmet" , "raşid"];
+    });
+
+
+
+</script>
+
+
+</body>
+</html>

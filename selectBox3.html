@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <select ng-model="secilen" ng-options="y.isim for (x,y) in takimlar"></select>
+
+    <h1>{{secilen.isim}} seçtiniz...</h1>
+    <h1>kuruluş: {{secilen.kurulus}}</h1>
+    <h1>renk: {{secilen.renk}}</h1>
+
+</div>
+
+
+
+<script>
+
+    var app=angular.module('myApp' ,[]);
+    app.controller('myCtrl' , function ($scope) {
+        $scope.takimlar={
+
+            takim1:{isim:"FB",kurulus:"1907",renk:"sari-lacivert"},
+            takim2:{isim:"GS",kurulus:"1905",renk:"sari-kırmızı"},
+            takim3:{isim:"BJK",kurulus:"1903",renk:"siyah-beyaz"}
+        };
+    });
+
+
+</script>
+</body>
+</html>
